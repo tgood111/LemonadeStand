@@ -8,5 +8,10 @@ namespace LemonadeStand
 {
     class Player
     {
+        public string name;
+        public double money;
+        public int customers;
+        
     }
 }
+

@@ -8,7 +8,15 @@ namespace LemonadeStand
 {
     class Weather
     {
-        int weather;
-    
+        private List<string> weatherOptions = new List<string> { "sunny", "rainy", "cloudy" };
+        public string cloudType;
+        Random random = new Random();
+        
+        
+            private void getCurrentWeather()
+                {
+                int select = random.Next(1, 3);
+            cloudType = weatherOptions[select];
+            }
     }
 }

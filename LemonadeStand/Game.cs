@@ -8,5 +8,12 @@ namespace LemonadeStand
 {
     class Game
     {
+        Day today;
+        private void createDay()
+        {
+            today = new Day();
+
+        }
+
     }
 }

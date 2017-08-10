@@ -10,28 +10,43 @@ namespace LemonadeStand
     {
         Weather todaysWeather;
         public int numberOfCustomers;
-        public Day()
+        private List<Customer> Customers = new List<Customer> { };
+        
+        private Day()
         {
             todaysWeather = new Weather();
             getNumberOfCustomers();
+            makeCustomer();
+
 
         }
-        public void getNumberOfCustomers()
+        private void getNumberOfCustomers()
         {
-            switch (todaysWeather.cloudType) {
+            switch (todaysWeather.cloudType)
+            {
                 case "sunny":
                     numberOfCustomers = 120;
                     break;
                 case "rainy":
-                numberOfCustomers = 60;
+                    numberOfCustomers = 60;
                     break;
                 case "cloudy":
                     numberOfCustomers = 80;
                     break;
                 default:
                     break;
-                
+
             }
+        }
+            private void makeCustomer()
+        {
+            Customer customer;
+            for(int i = 0; i < numberOfCustomers; i++)
+            {
+                customer = new Customer();
+                Customers.Add(customer);
+            }
+        }
                 
            
         }

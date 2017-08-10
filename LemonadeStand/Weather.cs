@@ -15,8 +15,8 @@ namespace LemonadeStand
         
             private void getCurrentWeather()
                 {
-                int select = random.Next(1, 3);
-            cloudType = weatherOptions[select];
+                int select = random.Next(0, 3);
+                cloudType = weatherOptions[select];
             }
     }
 }

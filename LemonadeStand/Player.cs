@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Player
+    public class Player
     {
-        public string name;
+        public string playerName;
         public double money;
         public int customers;
-        
-    }
+        Inventory inventory = new Inventory();
 }
+}
+public void getPlayerName()
+{
+    Console.WriteLine("Welcome to the Lemonade game! Please enter your name.");
+    Console.ReadLine(" ");
+    
+}
+public void 
 

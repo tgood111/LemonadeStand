@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Day
+     class Day
     {
         Weather todaysWeather;
         public int numberOfCustomers;
-        private List<Customer> Customers = new List<Customer> { };
+        public List<Customer> Customers = new List<Customer> { };
         
-        private Day()
+        public Day()
         {
             todaysWeather = new Weather();
             getNumberOfCustomers();
@@ -20,7 +20,7 @@ namespace LemonadeStand
 
 
         }
-        private void getNumberOfCustomers()
+        public void getNumberOfCustomers()
         {
             switch (todaysWeather.cloudType)
             {

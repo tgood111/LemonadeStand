@@ -13,7 +13,7 @@ namespace LemonadeStand
         int customerChoice;
             public Customer()
         {
-            int customerChoice = new customerChoice
+           int customerChoice = new customerChoice
         }
     }
 }

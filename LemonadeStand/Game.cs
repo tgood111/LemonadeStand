@@ -8,13 +8,35 @@ namespace LemonadeStand
 {
     class Game
     {
+        UserInterface userInterface;
+        Player player;
+        Day day;
+        Weather weather;
+        Store store;
+        Inventory inventory;
+        lemon lemon;
+        Sugar sugar;
+        Ice ice;
+        Cups cup;
+        Customer customer;
+        
+        
         private Customer buying;
         private double lemonadeCost;
 
         public Game()
         {
-            
+            player = new Player();
 
+        }
+
+        public void getUserInterface()
+        {
+            UserInterface userInterface = new UserInterface();
+        }
+        public void getWeather()
+        {
+            Weather weatherOptions = new Weather();
         }
 
         private void sellLemonade(Player player, Customer customer)
@@ -22,20 +44,22 @@ namespace LemonadeStand
             if (customer == buying)
             {
                 player.money += lemonadeCost;
-                Player.inventory.lose lemonade;
+                player.inventory.lose lemonade;
             }
         }
-
-        public void getPlayer()
+        public void getNewDay()
         {
-            Player player = new Player();
-
+            day = new Day();
+            for (int x = 0; x < day.Customers.Count; i++)
+            {
+                day.Customers[x].CheckIfBuy();
+            } 
         }
 
 
         private void sales()
         {
-            foreach (Customer customer in day.customers)
+            foreach (Customer customer in day.customer)
             {
                 sellLemonade(player, customer);
             }
@@ -43,12 +67,9 @@ namespace LemonadeStand
 
     }
 }
-public void getWeather()
-{
-    Weather weatherOptions = new Weather();
-}
 
 
 
-Day day = new Day();
+
+
 

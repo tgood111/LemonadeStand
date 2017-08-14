@@ -10,11 +10,12 @@ namespace LemonadeStand
     {
         Weather todaysWeather;
         public int numberOfCustomers;
-        public List<Customer> Customers = new List<Customer> { };
+        public List<Customer> Customers;
         
         public Day()
         {
             todaysWeather = new Weather();
+            Customers = new List<Customer>();
             getNumberOfCustomers();
             makeCustomer();
 

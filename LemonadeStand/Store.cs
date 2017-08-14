@@ -13,17 +13,25 @@ namespace LemonadeStand
         public int sugar;
         public int ice;
         public int cups;
-    }
-}
-public void lemonCount()
-{
-    if (player choose 10) {
-        charge .95;
-    }
-    else if (player choose 30) {
-        (charge 2.08);
+        public Store()
+        {
+
         }
-}   else if (Customer choose 75 {
+        public void getLemonCount(Player player)
+        {   switch (lemonCount)
+            {
+                case "10":
+                    if (player == 10)
+                    {
+                        charge .95;
+
+                    }
+                
+            }
+    else if (player choose 30) {
+                (charge 2.08);
+            }
+        }   else if (Customer choose 75 {
         (player 4.42);
    
     public void sugarCount()
@@ -33,6 +41,10 @@ public void lemonCount()
 } else if (player choose 48)
 { (charge 3.44);
     }
+    }
+
+}
+
 
     public void iceCount()
     if (player choose 100){

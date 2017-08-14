@@ -13,7 +13,12 @@ namespace LemonadeStand
         int customerChoice;
             public Customer()
         {
-           int customerChoice = new customerChoice
+            int customerChoice = new customerChoice();
+        }
+
+        public void CheckIfBuy()
+        {
+            //logic to check if a customer will buy
         }
     }
 }

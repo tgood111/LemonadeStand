@@ -51,7 +51,6 @@
     <Compile Include="Inventory.cs" />
     <Compile Include="lemon.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="Player1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlConnection.cs" />

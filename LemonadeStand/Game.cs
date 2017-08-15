@@ -6,70 +6,63 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Game
+    public class Game
     {
-        UserInterface userInterface;
-        Player player;
-        Day day;
-        Weather weather;
-        Store store;
-        Inventory inventory;
-        lemon lemon;
-        Sugar sugar;
-        Ice ice;
-        Cups cup;
-        Customer customer;
-        
-        
+        private UserInterface userInterface;
+        private Player player;
+        private Store store;
+        private Inventory playerInventory;
+        private List<Day> days;
+
         private Customer buying;
         private double lemonadeCost;
 
         public Game()
         {
             player = new Player();
-
+            store = new LemonadeStand.Store();
+            userInterface = new UserInterface();
+            playerInventory = new Inventory();
         }
 
-        public void getUserInterface()
+        public void run()
         {
-            UserInterface userInterface = new UserInterface();
-        }
-        public void getWeather()
-        {
-            Weather weatherOptions = new Weather();
-        }
+            player.name = userInterface.writeOpeningPrompts();
+            userInterface.explainTasks(player.name);
 
-        private void sellLemonade(Player player, Customer customer)
-        {
-            if (customer == buying)
+            days = new List<Day>();
+            for (int i = 0; i < 7; ++i)
+                days.Add(new LemonadeStand.Day());
+
+            for (int i = 0; i < 7; ++i)
             {
-                player.money += lemonadeCost;
-                player.inventory.lose lemonade;
-            }
-        }
-        public void getNewDay()
-        {
-            day = new Day();
-            for (int x = 0; x < day.Customers.Count; i++)
-            {
-                day.Customers[x].CheckIfBuy();
-            } 
-        }
-
-
-        private void sales()
-        {
-            foreach (Customer customer in day.customer)
-            {
-                sellLemonade(player, customer);
+                int choice = userInterface.displayMainMenu();
+                choiceHandler(choice);
             }
         }
 
+        public void choiceHandler(int choice)
+        {
+            switch (choice)
+            {
+                case 1:
+                    break;
+
+                case 2:
+                    userInterface.showInventory(player, playerInventory);
+                    break;
+
+                case 3:
+                    userInterface.forecast(days);
+                    break;
+
+                case 4:
+                    break;
+
+                default:
+                    Console.WriteLine("Not a valid choice! Try again");
+                    break;
+            }
+        }
     }
 }
-
-
-
-
-
-

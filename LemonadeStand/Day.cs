@@ -6,52 +6,51 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-     class Day
+    internal class Day
     {
-        Weather todaysWeather;
-        public int numberOfCustomers;
-        public List<Customer> Customers;
-        
+        public Weather todaysWeather { get; private set; }
+
+        public int numberOfCustomers { get; private set; }
+        public List<Customer> Customers { get; private set; }
+
         public Day()
         {
-            todaysWeather = new Weather();
-            Customers = new List<Customer>();
-            getNumberOfCustomers();
-            makeCustomer();
-
-
+            init();
         }
-        public void getNumberOfCustomers()
+
+        public void determineNumberOfCustomers()
         {
             switch (todaysWeather.cloudType)
             {
                 case "sunny":
                     numberOfCustomers = 120;
                     break;
+
                 case "rainy":
                     numberOfCustomers = 60;
                     break;
+
                 case "cloudy":
                     numberOfCustomers = 80;
                     break;
+
                 default:
                     break;
-
             }
         }
-            private void makeCustomer()
+
+        private void init()
         {
-            Customer customer;
-            for(int i = 0; i < numberOfCustomers; i++)
-            {
-                customer = new Customer();
-                Customers.Add(customer);
-            }
-        }
-                
-           
+            todaysWeather = new Weather();
+            Customers = new List<Customer>();
+            makeCustomer();
         }
 
+        private void makeCustomer()
+        {
+            determineNumberOfCustomers();
+            for (int i = 0; i < numberOfCustomers; i++)
+                Customers.Add(new Customer());
+        }
     }
-    
 }

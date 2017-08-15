@@ -19,7 +19,7 @@ namespace LemonadeStand
 
         public void explainTasks(string name)
         {
-            Console.WriteLine("Hey " + name + " great to meet you! You are going to need to buy things for lemonade and sell it! Good luck!");
+            Console.WriteLine("Hey " + name + " great to meet you! You are going to need to buy product for lemonade and sell it for a profit! Good luck!");
         }
 
         public int displayMainMenu()
@@ -27,7 +27,7 @@ namespace LemonadeStand
             Console.WriteLine("Enter what you would like to do");
             Console.WriteLine("1. Sell Lemonade");
             Console.WriteLine("2. View Inventory");
-            Console.WriteLine("3. Forecast");
+            Console.WriteLine("3. Weather Forecast");
             Console.WriteLine("4. Purchase Items");
             int choice;
             Int32.TryParse(Console.ReadLine(), out choice);

@@ -6,19 +6,27 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    class Customer
+    internal class Customer
     {
-        private List<int> getNumberOfCustomers = new List<int> { };
-        Random random = new Random();
-        int customerChoice;
-            public Customer()
+        public double money;
+        private Random random = new Random();
+
+        private int customerChoice;
+
+        public Customer()
         {
-            int customerChoice = new customerChoice();
+            double max = 5;
+            this.money = random.NextDouble() * max;
         }
 
-        public void CheckIfBuy()
+        public bool CheckIfBuy(double price)
         {
             //logic to check if a customer will buy
+            if (money > price)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

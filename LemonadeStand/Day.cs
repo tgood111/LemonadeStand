@@ -8,7 +8,7 @@ namespace LemonadeStand
 {
     internal class Day
     {
-        public Weather todaysWeather { get; private set; }
+        public Weather weather { get; private set; }
 
         public int numberOfCustomers { get; private set; }
         public List<Customer> Customers { get; private set; }
@@ -20,7 +20,7 @@ namespace LemonadeStand
 
         public void determineNumberOfCustomers()
         {
-            switch (todaysWeather.cloudType)
+            switch (weather.cloudType)
             {
                 case "sunny":
                     numberOfCustomers = 120;
@@ -41,7 +41,7 @@ namespace LemonadeStand
 
         private void init()
         {
-            todaysWeather = new Weather();
+            weather = new Weather();
             Customers = new List<Customer>();
             makeCustomer();
         }

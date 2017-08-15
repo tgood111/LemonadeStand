@@ -36,16 +36,21 @@ namespace LemonadeStand
 
             for (int i = 0; i < 7; ++i)
             {
-                int choice = userInterface.displayMainMenu();
-                choiceHandler(choice);
+                int choice;
+                do
+                {
+                    choice = userInterface.displayMainMenu();
+                } while (choiceHandler(choice));
             }
         }
 
-        public void choiceHandler(int choice)
+        public bool choiceHandler(int choice)
         {
+            bool next = true;
             switch (choice)
             {
                 case 1:
+                    // Sell Lemonade
                     break;
 
                 case 2:
@@ -57,12 +62,14 @@ namespace LemonadeStand
                     break;
 
                 case 4:
+                    // Purchasing choices
                     break;
 
                 default:
                     Console.WriteLine("Not a valid choice! Try again");
                     break;
             }
+            return next;
         }
     }
 }

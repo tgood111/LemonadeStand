@@ -10,7 +10,7 @@ namespace LemonadeStand
     {
         private List<string> weatherOptions = new List<string> { "sunny", "rainy", "cloudy" };
         public string cloudType { get; set; }
-        private Random random = new Random();
+        private static Random random = new Random(Guid.NewGuid().GetHashCode());
 
         public Weather()
         {

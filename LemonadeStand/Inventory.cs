@@ -37,5 +37,10 @@ namespace LemonadeStand
             ice.cost = i;
             cups.cost = c;
         }
+
+        public void showRecipe()
+        {
+            Console.WriteLine("Lemon - 1 Sugar - 1 Ice - 1 ");
+        }
     }
 }

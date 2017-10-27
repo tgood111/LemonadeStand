@@ -136,7 +136,11 @@ namespace LemonadeStand
                         Console.WriteLine("Loss! Looks like you are losing money. Keep trying!");
                     }
                     break;
-                case 6:
+
+                case 6:playerInventory.showRecipe();
+
+                    break;
+                case 9:
                     //exit the application
                     Environment.Exit(0);
                     break;

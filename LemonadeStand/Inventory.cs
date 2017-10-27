@@ -12,6 +12,7 @@ namespace LemonadeStand
         public Item sugar;
         public Item ice;
         public Item cups;
+        public double MoneyBalance;
 
         public Inventory()
         {

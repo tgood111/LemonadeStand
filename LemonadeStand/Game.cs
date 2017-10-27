@@ -9,20 +9,33 @@ namespace LemonadeStand
     public class Game
     {
         private UserInterface userInterface;
-        private Player player;
+        private Player player1;
+        private Player player2;  //second player 2
         private Store store;
-        private Inventory playerInventory;
+        private Inventory playerInventory1;
+        private Inventory playerInventory2;  //second player Inventory
         private List<Day> days;
+
+        Player player;
+        Inventory playerInventory;
 
         private Customer buying;
         private double lemonadeCost;
 
         public Game()
         {
-            player = new Player();
+            player1 = new Player();
+            player2 = new Player();
             store = new LemonadeStand.Store();
             userInterface = new UserInterface();
-            playerInventory = new Inventory();
+            playerInventory1 = new Inventory();
+            playerInventory2 = new Inventory();
+
+            //set the first player and inventory as default
+
+            //this will be used to switch
+            player = player1;
+            playerInventory = playerInventory1;
 
             //set the cost of lemonade here
             //this is in the cents.
@@ -31,8 +44,12 @@ namespace LemonadeStand
 
         public void run()
         {
-            player.name = userInterface.writeOpeningPrompts();
-            userInterface.explainTasks(player.name);
+
+            player1.name = userInterface.writeOpeningPrompts();
+            userInterface.explainTasks(player1.name);
+
+            player2.name = userInterface.writeOpeningPrompts();
+            userInterface.explainTasks(player2.name);
 
             days = new List<Day>();
             for (int i = 0; i < 7; ++i)
@@ -140,6 +157,22 @@ namespace LemonadeStand
                 case 6:playerInventory.showRecipe();
 
                     break;
+
+                case 7: //switch the player and inventory
+                    //doing a simple swap of players and inventory objects
+                    if(player.name == player1.name)
+                    {
+                        player = player2;
+                        playerInventory = playerInventory2;
+                    }
+                    else
+                    {
+                        player = player1;
+                        playerInventory = playerInventory1;
+                    }
+
+                    break;
+
                 case 9:
                     //exit the application
                     Environment.Exit(0);

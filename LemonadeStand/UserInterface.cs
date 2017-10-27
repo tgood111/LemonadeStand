@@ -29,7 +29,8 @@ namespace LemonadeStand
             Console.WriteLine("2. View Inventory");
             Console.WriteLine("3. Weather Forecast");
             Console.WriteLine("4. Purchase Items");
-            Console.WriteLine("5. Quit the Software");
+            Console.WriteLine("5. Check Revenue - Profit or Loss");
+            Console.WriteLine("6. Quit");
             int choice;
             Int32.TryParse(Console.ReadLine(), out choice);
             return choice;

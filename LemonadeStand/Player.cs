@@ -22,5 +22,11 @@ namespace LemonadeStand
             this.name = name;
             this.money = money;
         }
+
+        public double returnPlayerInitialMoney()
+        {
+            money = 100;
+            return money;
+        }
     }
 }

@@ -1,0 +1,19 @@
+﻿SOLID Usage 1
+
+Look at class UserInterface.
+
+Sing Responsibility : It serves one purpose of providing user interface
+Open/Closed : UserInterface can be used as a base for derived classes to provide a better user interface.
+Liskov : Derived classes can be used everywhere where UserInterface class is used.
+Interface Segregation : have not used Interfaces here.
+Dependency Inversion : have not used dependency inversion here.
+
+SOLID Usage 2
+
+Look at class Inventory
+
+Sing Responsibility : It serves one purpose of providing Inventory services
+Open/Closed : Inventory class can be derived to provided additional features
+Liskov : Derived classes can be used in the place of Inventory class
+Interface Segregation : have not used Interfaces here
+Dependency Inversion : have not used dependency inversion here.
